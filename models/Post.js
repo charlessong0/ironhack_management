@@ -14,7 +14,7 @@ module.exports = Post;
 var PostDao = require('../daos/PostDao');
 
 Post.prototype.save = function save(callback) {
-    // 存入 Mongodb 的文檔
+    // save into mongodb
     var post = {
         user: this.user,
         post: this.post,

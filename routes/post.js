@@ -8,7 +8,7 @@ exports.doPost = function(req, res) {
             req.flash('error', err);
             return res.redirect('/');
         }
-        req.flash('success', '发表成功');
+        req.flash('success', 'post success!');
         res.redirect('/u/' + currentUser.name);
     });
 };

@@ -13,7 +13,7 @@ exports.index = function(req, res) {
             posts = [];
         }
         res.render('index', {
-            title: '首页',
+            title: 'Homepage',
             posts: posts
         });
     });
@@ -21,26 +21,26 @@ exports.index = function(req, res) {
 
 exports.login = function(req, res) {
     res.render('login', {
-        title: '用戶登入',
+        title: 'User Login',
     });
 };
 
 exports.doLogin = function(req, res) {
-    //生成口令的散列值
+    //md5 for password
     var md5 = crypto.createHash('md5');
     var password = md5.update(req.body.password).digest('base64');
 
     User.get(req.body.username, function(err, user) {
         if (!user) {
-            req.flash('error', '用户不存在');
+            req.flash('error', 'user does not exist');
             return res.redirect('/login');
         }
         if (user.password != password) {
-            req.flash('error', '密码错误');
+            req.flash('error', 'wrong password');
             return res.redirect('/login');
         }
         req.session.user = user;
-        req.flash('success', '登录成功');
+        req.flash('success', 'login success!');
         res.redirect('/');
     });
 };
@@ -48,7 +48,7 @@ exports.doLogin = function(req, res) {
 
 exports.logout = function(req, res) {
     req.session.user = null;
-    req.flash('success', '登出成功');
+    req.flash('success', 'logout success!');
     res.redirect('/');
 };
 
@@ -86,7 +86,7 @@ module.exports = function(app) {
 
 function checkLogin(req, res, next) {
     if (!req.session.user) {
-        req.flash('error', '未登入');
+        req.flash('error', 'shoudl login first');
         return res.redirect('/login');
     }
     next();
@@ -94,7 +94,7 @@ function checkLogin(req, res, next) {
 
 function checkNotLogin(req, res, next) {
     if (req.session.user) {
-        req.flash('error', '已登入');
+        req.flash('error', 'login already');
         return res.redirect('/');
     }
     next();

@@ -2,20 +2,20 @@ var mongodb = require('../db');
 var User = require('../models/User');
 
 exports.save = function save(user,callback) {
-  // 存入 Mongodb 的文檔
+  // save into mongodb documents
   mongodb.open(function(err, db) {
     if (err) {
       return callback(err);
     }
-    // 讀取 users 集合
+    // get users set
     db.collection('users', function(err, collection) {
       if (err) {
         mongodb.close();
         return callback(err);
       }
-      // 爲 name 屬性添加索引
+      // add index for 'name'
       collection.ensureIndex('name', {unique: true});
-      // 寫入 user 文檔
+      // write into the user document
       collection.insert(user, {safe: true}, function(err, user) {
         mongodb.close();
         callback(err, user);
@@ -30,17 +30,17 @@ exports.get = function get(username, callback) {
     if (err) {
       return callback(err);
     }
-    // 讀取 users 集合
+    // get users set
     db.collection('users', function(err, collection) {
       if (err) {
         mongodb.close();
         return callback(err);
       }
-      // 查找 name 屬性爲 username 的文檔
+      // check posts whose name=username 
       collection.findOne({name: username}, function(err, doc) {
         mongodb.close();
         if (doc) {
-          // 封裝文檔爲 User 對象
+          // create User object based on user
           var user = new User(doc);
           callback(err, user);
         } else {

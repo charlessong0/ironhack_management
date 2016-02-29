@@ -2,21 +2,21 @@ var mongodb = require('../db');
 var Post = require('../models/Post');
 
 exports.save = function save(post, callback) {
-  // 存入 Mongodb 的文檔
+  // save into mongodb documents
 
   mongodb.open(function(err, db) {
     if (err) {
       return callback(err);
     }
-    // 讀取 posts 集合
+    // read 'posts' set from the database
     db.collection('posts', function(err, collection) {
       if (err) {
         mongodb.close();
         return callback(err);
       }
-      // 爲 user 屬性添加索引
+      // create index for 'user'
       collection.ensureIndex('user');
-      // 寫入 post 文檔
+      // write into 'post' document
       collection.insert(post, {safe: true}, function(err, post) {
         mongodb.close();
         callback(err, post);
@@ -30,13 +30,13 @@ exports.get = function get(username, callback) {
     if (err) {
       return callback(err);
     }
-    // 讀取 posts 集合
+    // read posts set
     db.collection('posts', function(err, collection) {
       if (err) {
         mongodb.close();
         return callback(err);
       }
-      // 查找 user 屬性爲 username 的文檔，如果 username 是 null 則匹配全部
+      // find user based on username, null will return all the users
       var query = {};
       if (username) {
         query.user = username;
@@ -46,7 +46,7 @@ exports.get = function get(username, callback) {
         if (err) {
           callback(err, null);
         }
-        // 封裝 posts 爲 Post 對象
+        // create post object for each posts
         var posts = [];
         docs.forEach(function(doc, index) {
           var post = new Post(doc.user, doc.post, doc.time);

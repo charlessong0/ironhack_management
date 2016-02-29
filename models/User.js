@@ -9,7 +9,7 @@ module.exports = User;
 var UserDao = require('../daos/UserDao');
 
 User.prototype.save = function save(callback) {
-    // 存入 Mongodb 的文檔
+    // save into mongodb
     var user = {
         name: this.name,
         password: this.password,
