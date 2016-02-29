@@ -23,8 +23,8 @@
           <a class="brand" href="/">Ironhack</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="/">Homepage</a></li>
-              <% if (!locals.user) { %>
+              <li><a href="/">Homepage</a></li>
+              <% if (locals.user == null) { %>
                 <li><a href="/login">Login</a></li>
                 <li><a href="/reg">Register</a></li>
               <% } else { %>

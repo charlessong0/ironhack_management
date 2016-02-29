@@ -9,7 +9,9 @@
     </p>
   </div>
 <% } else { %>
-  <% include say.html %>
+  <% if (locals.user.type != "111") { %>
+    <% include say.html %>
+  <% } %>
   <% include posts.html %>
 <% } %>
 

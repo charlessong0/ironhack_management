@@ -43,6 +43,8 @@ exports.doReg = function(req, res) {
     var newUser = new User({
         name: req.body.username,
         password: password,
+        email: req.body.email,
+        type: req.body.type,
     });
 
     //check if the username exists

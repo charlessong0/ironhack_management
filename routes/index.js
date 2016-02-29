@@ -14,7 +14,8 @@ exports.index = function(req, res) {
         }
         res.render('index', {
             title: 'Homepage',
-            posts: posts
+            posts: posts,
+            user: req.session.user
         });
     });
 };
