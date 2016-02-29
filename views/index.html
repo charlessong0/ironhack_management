@@ -1,7 +1,7 @@
 <% include header.html %>
  <% if (!locals.user) { %>
   <div class="hero-unit">
-    <h1>test ironhack/h1>
+    <h1>test ironhack</h1>
     <p>developed based on node.js and express </p>
     <p>
       <a class="btn btn-primary btn-large" href="/login">login</a>
@@ -9,8 +9,8 @@
     </p>
   </div>
 <% } else { %>
- <% include say.html %>
+  <% include say.html %>
+  <% include posts.html %>
 <% } %>
-<% include posts.html %>
 
 <% include footer.html %>
