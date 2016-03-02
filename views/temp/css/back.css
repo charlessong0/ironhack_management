@@ -1,0 +1,172 @@
+body {
+    margin-top: 50px;
+}
+
+.full {
+    background: url(../images/Background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.login-box {
+    width: 445px;
+    height: 650px;
+    position: absolute;
+    top: calc(40vh - 200px);
+    left: calc(50vw - 200px);
+    overflow: hidden;
+}
+
+.box {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-family: Verdana;
+    color: #D0D7D0;
+    background: rgba(0, 0, 0, 0.13);
+    padding: 40px 0px;
+}
+
+.box input {
+    display: block;
+    width: 400px;
+    margin: 45px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #D0D7D9;
+    border: 0;
+}
+
+.box input:focus,
+.box input:active,
+.box button:focus,
+.box button:active {
+    outline: none;
+}
+
+.box button {
+    background: rgba(0, 0, 0, 0.2);
+    border: 0;
+    color: #D0D7D9;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 20px;
+    width: 320px;
+    margin: 30px auto;
+    display: block;
+    cursor: pointer;
+}
+
+.box button:active {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.box p span {
+    cursor: pointer;
+    color: #666;
+}
+
+h2 {
+    text-align: center;
+}
+
+.newbox {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 5px auto;
+    padding: 10px;
+    border: 0;
+}
+.full2 {
+      background: url(../images/Background2.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    width: 200px;
+    
+}
+
+.login-box2 {
+    width: 380px;
+    height: 800px;
+    position: absolute;
+    top: calc(30vh - 185px);
+    left: calc(13vw - 200px);
+    overflow: hidden;
+}
+
+.box2 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-family: Verdana;
+    color: #D0D7D0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0px 0px;
+    text-align: center;
+}
+
+.login-box3 {
+    width: 380px;
+    height: 800px;
+    position: absolute;
+    top: calc(30vh - 185px);
+    left: calc(36vw - 200px);
+    overflow: hidden;
+}
+
+.box3 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-family: Verdana;
+    color: #D0D7D0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0px 0px;
+    text-align: center;
+}
+
+.box4 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-family: Verdana;
+    color: #D0D7D0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0px 0px;
+    text-align: center;
+}
+
+.box5 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-family: Verdana;
+    color: #D0D7D0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0px 0px;
+    
+}
+
+.login-box4 {
+     width: 850px;
+    height: 390px;
+    position: absolute;
+    top: calc(30vh - 185px);
+    left: calc(60vw - 200px);
+    overflow: hidden;
+}
+
+.login-box5 {
+    width: 850px;
+    height: 390px;
+    position: absolute;
+    top: calc(73vh - 185px);
+    left: calc(60vw - 200px);
+    overflow: hidden;
+    text-align: center;
+}
