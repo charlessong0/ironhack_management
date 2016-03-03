@@ -78,10 +78,10 @@ module.exports = function(app) {
     app.post('/reg', checkNotLogin);
     app.post('/reg', user.doReg);
 
-
-
     app.post('/post', checkLogin);
     app.post('/post', post.doPost);
+
+    app.get('/test', that.testPage);
 
 };
 
@@ -99,4 +99,8 @@ function checkNotLogin(req, res, next) {
         return res.redirect('/');
     }
     next();
+}
+
+exports.testPage = function (req, res) {
+    res.render('temp/index');
 }
