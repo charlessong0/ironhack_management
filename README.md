@@ -13,5 +13,4 @@ You can also add the automation module to run it automatically after every chang
 npm install -g nodemon
 nodemon main.js
 ```
-
 2016-03-01
