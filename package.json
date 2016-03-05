@@ -1,13 +1,13 @@
 {
-	"name": "ironhack_namagement",
-	"version": "0.0.1",
-	"author": "Charles Song",
-	"private": true,
-	"dependencies": {
-		"express": "*",
-		"ejs": "*",
-		"connect-mongo": "*",
-		"mongodb": "*",
-		"connect-flash": "*"
-	}
+  "name": "ironhack_namagement",
+  "version": "0.0.1",
+  "author": "Charles Song",
+  "private": true,
+  "dependencies": {
+    "connect-flash": "*",
+    "connect-mongo": "^0.3.2",
+    "ejs": "*",
+    "express": "^3.0.6",
+    "mongodb": "^1.2.9"
+  }
 }
