@@ -49,7 +49,11 @@ exports.get = function get(username, callback) {
         // create post object for each posts
         var posts = [];
         docs.forEach(function(doc, index) {
-          var post = new Post(doc.user, doc.post, doc.time);
+          var post = new Post({
+            user: doc.user, 
+            post: doc.post, 
+            time: doc.time,
+        });
           posts.push(post);
         });
         callback(null, posts);

@@ -39,12 +39,25 @@ exports.doReg = function(req, res) {
     //create md5 for password
     var md5 = crypto.createHash('md5');
     var password = md5.update(req.body.password).digest('base64');
+    
+    //var scores1 = [];
+    var scores1 = [];
+    scores_temp = {};
+    scores_temp.phase = 1;
+    scores_temp.scores = [1,2,3,4];
+    scores_temp.finalScore= 123;
+    
+    console.log(scores1.length);
+    scores1[scores1.length] = scores_temp;
+    //scores.append(scores_temp);
+    console.log(scores1);
 
     var newUser = new User({
         name: req.body.username,
         password: password,
         email: req.body.email,
         type: req.body.type,
+        scores: scores1,
     });
 
     //check if the username exists
