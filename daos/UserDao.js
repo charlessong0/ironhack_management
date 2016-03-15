@@ -26,7 +26,7 @@ exports.save = function save(user,callback) {
 
 exports.get = function get(username, callback) {
 
-  mongodb.open(function(err, db) {
+mongodb.open(function(err, db) {
     if (err) {
       return callback(err);
     }
@@ -50,3 +50,32 @@ exports.get = function get(username, callback) {
     });
   });
 };
+
+//set the scores for a user
+exports.setScore = function get(username, phase, score, callback) {
+
+mongodb.open(function(err, db) {
+    if (err) {
+      return callback(err);
+    }
+    // get users set
+    db.collection('users', function(err, collection) {
+      if (err) {
+        mongodb.close();
+        return callback(err);
+      }
+      // check posts whose name=username 
+      collection.findOne({name: username}, function(err, doc) {
+        mongodb.close();
+        if (doc) {
+          // create User object based on user
+          var user = new User(doc);
+          callback(err, user);
+        } else {
+          callback(err, null);
+        }
+      });
+    });
+  });
+};
+
