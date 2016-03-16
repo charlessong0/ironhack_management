@@ -52,6 +52,7 @@ mongodb.open(function(err, db) {
 };
 
 //set the scores for a user
+//the parameter "score" is an array with the scores of phase1, 2, 3, final
 exports.setScore = function get(username, phase, score, callback) {
 
 mongodb.open(function(err, db) {
