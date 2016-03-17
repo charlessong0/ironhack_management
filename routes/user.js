@@ -47,10 +47,12 @@ exports.doReg = function(req, res) {
     scores_temp.scores = [1,2,3,4];
     scores_temp.finalScore= 123;
     
-    console.log(scores1.length);
-    scores1[scores1.length] = scores_temp;
+
+    //console.log(scores1.length);
+    //scores1[scores1.length] = scores_temp;
+    scores1.push(scores_temp);
     //scores.append(scores_temp);
-    console.log(scores1);
+    //console.log(scores1);
 
     var newUser = new User({
         name: req.body.username,

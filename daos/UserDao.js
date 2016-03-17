@@ -38,6 +38,10 @@ mongodb.open(function(err, db) {
       }
       // check posts whose name=username 
       collection.findOne({name: username}, function(err, doc) {
+
+        var newScore = doc.scores;
+        newScore.push("haha123");
+        collection.update({name: username}, {$set:{scores: newScore}}, function(err, bar){});
         mongodb.close();
         if (doc) {
           // create User object based on user
