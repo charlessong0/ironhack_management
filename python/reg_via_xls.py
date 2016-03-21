@@ -17,5 +17,4 @@ col_total = sh.ncols
 for num in range(1, row_total):
     
 
-
 # connect and write data into mongo
