@@ -25,8 +25,7 @@ exports.save = function save(user,callback) {
 };
 
 exports.get = function get(username, callback) {
-
-mongodb.open(function(err, db) {
+    mongodb.open(function(err, db) {
     if (err) {
       return callback(err);
     }
