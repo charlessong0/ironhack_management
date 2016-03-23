@@ -54,7 +54,8 @@ exports.get = function get(username, callback) {
             post: doc.post, 
             time: doc.time,
         });
-          posts.push(post);
+        var post1 = new Post(doc);
+          posts.push(post1);
         });
         callback(null, posts);
       });

@@ -4,6 +4,7 @@ function User(user) {
     this.email = user.email;
     this.type = user.type;
 
+    this.ironhackName = user.ironhackName;
     this.realName = user.realName;
     this.githubName = user.githubName;
     this.phoneNumber = user.phoneNumber;
@@ -29,6 +30,7 @@ User.prototype.save = function save(callback) {
         email: this.email,
         type: this.type,
 
+        ironhackName: this.ironhackName,
         realName: this.realName,
         githubName: this.githubName,
         phoneNumber: this.phoneNumber,
@@ -41,4 +43,15 @@ User.prototype.save = function save(callback) {
 
 User.get = function get(username, callback) {
     UserDao.get(username, callback);
+};
+
+User.getAll = function getAll(callback) {
+  UserDao.getAll(callback);
+};
+
+//set new score into user document
+//the score is a list for all scores
+User.setScore = function setScore(username, score, callback) {
+    
+    UserDao.setScore(username, score, callback)
 };

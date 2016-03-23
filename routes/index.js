@@ -8,6 +8,9 @@ var post = require('./post');
 var that = exports;
 
 exports.index = function(req, res) {
+  User.getAll(function (err, users) {
+  
+//  });  
     Post.get(null, function(err, posts) {
         if (err) {
             posts = [];
@@ -15,8 +18,10 @@ exports.index = function(req, res) {
         res.render('index', {
             title: 'Homepage',
             posts: posts,
+            users: users, 
             user: req.session.user
         });
+    });
     });
 };
 

@@ -22,12 +22,16 @@ print test1.get("scores")[0].get("scores")
 
 m = hashlib.md5()
 #m.update(base64.b64encode("password".encode('utf-8')))
-m.update("password")
-temp = m.digest().encode('utf-8')
+m.update("password123")
+temp = m.digest()
+
+temp1 = base64.b64encode(temp)
+print temp1
+
 ## Insert Method
 new_user = {
-    "username": "python_test",
-    "password": temp,
+    "name": "python_test123",
+    "password": temp1,
     "scores": [
         {"phase": 1,
         "scores": [1,2,3],
@@ -36,3 +40,4 @@ new_user = {
 }
 print collection.insert(new_user)
 
+client.close()
