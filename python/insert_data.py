@@ -8,14 +8,14 @@ class Client:
         self.port = port
         self.db_name = db_name
 
-    def connectDB(slef):
-        client = MongoClient(ip, port)
-        db1 = client.ironhack
-        db = db.users
-        print db.find()
-        return db
+    def connectDB(self, collection_name):
+        client = MongoClient(self.ip, self.port)
+        #db = client.ironhack
+        db = client[self.db_name]
+        collection = db[collection_name]
+        print collection.find_one()
+        return collection
 
-client = Client("localhost", 27017, "ironhack")
-db = client.connectDB
-#collection = db.users
-#print db.find()
+client1 = Client("localhost", 27017, "ironhack")
+collection = client1.connectDB("users")
+print collection.find_one()

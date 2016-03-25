@@ -1,4 +1,3 @@
-
 var express = require('express');
 var ejs = require('ejs');
 var flash = require('connect-flash');
