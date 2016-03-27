@@ -13,9 +13,34 @@ class Client:
         #db = client.ironhack
         db = client[self.db_name]
         collection = db[collection_name]
-        print collection.find_one()
+        #print collection.find_one()
         return collection
 
 client1 = Client("localhost", 27017, "ironhack")
-collection = client1.connectDB("users")
+collection = client1.connectDB("posts")
 print collection.find_one()
+
+# post data for greenironhack 
+# technology evalution
+participants_tech = [
+    [],
+    [],
+    []
+]
+judges_tech = []
+
+for judge in judges_tech:
+    
+
+# infoviz evlaution
+participants_info = [
+    [],
+    [],
+    [],
+    [],
+    []
+]
+judges_info = []
+
+for judge in judges_info:
+
