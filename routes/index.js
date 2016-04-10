@@ -1,27 +1,42 @@
 var crypto = require('crypto');
 var User = require('../models/User');
 var Post = require('../models/Post');
+var Version = require('../models/Version')
 
 var user = require('./user');
 var post = require('./post');
 
 var that = exports;
 
-exports.index = function(req, res) {
-  User.getAll(function (err, users) {
+exports.index = function (req, res) {
+  User.getAll(function (err, users) { 
+//  Version.get(function (err, version) {
   
-//  });  
-    Post.get(null, function(err, posts) {
-        if (err) {
-            posts = [];
-        }
+    Post.get(null, function (err, posts) {
+//      Version.get(function (err, version) {
+//        req.session.version = version;
+      
+     //   if (err) {
+     //       posts = [];
+     //   }
+//     console.log("22222222")
+     
+//        console.log(version);
+    var version = {
+        ironhackName: "greenironhack",
+        currentPhase: 1
+    }
+    req.session.version = version;
         res.render('index', {
             title: 'Homepage',
             posts: posts,
             users: users, 
-            user: req.session.user
+            user: req.session.user,
+            version: req.session.version
         });
+//      });
     });
+//    });
     });
 };
 
